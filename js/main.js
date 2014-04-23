@@ -43,11 +43,17 @@ function setupSpacebrew (){
 // o.alpha, o.beta, o.gamma for gyro
 function onAccelerometer( obj ){
     
-    obj.y 
-    obj.z
+    var x = obj.x * 1000;
+    x = Math.round(x);
     
-    sb.send("accelX", "range", ""+ obj.x.toString() );
-    sb.send("accelY", "range", ""+ obj.y.toString() );
-    sb.send("accelZ", "range", ""+ obj.y.toString() );
+    var y = obj.y * 1000;
+    y = Math.round(y);
+    
+    var z = obj.z * 1000;
+    z = Math.round(z);
+    
+    sb.send("accelX", "range", x.toString() );
+    sb.send("accelY", "range", y.toString() );
+    sb.send("accelZ", "range", z.toString() );
     
 }
