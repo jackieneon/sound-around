@@ -35,7 +35,7 @@ function setupSpacebrew (){
     // connect to spacbrew
     sb.connect();
     
-    //gyro.frequency = 500;
+    gyro.frequency = 50;
     gyro.startTracking( onAccelerometer );
 };
 
@@ -46,7 +46,8 @@ function onAccelerometer( obj ){
     obj.y 
     obj.z
     
-    sb.send("accelX", "range", ""+ obj.x );
-    sb.send("accelY", "range", ""+ obj.y );
+    sb.send("accelX", "range", ""+ obj.x.toString() );
+    sb.send("accelY", "range", ""+ obj.y.toString() );
+    sb.send("accelZ", "range", ""+ obj.y.toString() );
     
 }
