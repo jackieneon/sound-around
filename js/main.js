@@ -46,7 +46,7 @@ function onAccelerometer( obj ){
     obj.y 
     obj.z
     
-    sb.send("accelX", "range", obj.x );
-    sb.send("accelY", "range", obj.y );
+    sb.send("accelX", "range", ""+ obj.x );
+    sb.send("accelY", "range", ""+ obj.y );
     
 }
