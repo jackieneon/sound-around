@@ -45,15 +45,14 @@ function setupSpacebrew (){
 // o.x, o.y, o.z for accelerometer
 // o.alpha, o.beta, o.gamma for gyro
 function onAccelerometer( obj ){
-
   //put acel dat here to rotate arrow 
   // 1 -get the html element  
   // 2 - set 
   
   //the style
-//set our arrow variable
-arrow = document.getElementById("red");
-  arrow.style.webkitTransform = "rotate(" + (obj.z * 18) + "deg)"
+    //set our arrow variable
+    arrow = document.getElementById("red");
+    arrow.style.webkitTransform = "rotate(" + (obj.x * 18) + "deg)"
   
     var x = obj.x * 1000;
     x = Math.round(x);
