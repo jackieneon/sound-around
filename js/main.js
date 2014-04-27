@@ -41,7 +41,6 @@ function setupSpacebrew (){
     gyro.startTracking( onAccelerometer );
     
     //set our arrow variable
-    arrow = document.getElementById("red");
 };
 
 // o.x, o.y, o.z for accelerometer
@@ -53,6 +52,7 @@ function onAccelerometer( obj ){
   // 2 - set 
   
   //the style
+    arrow = document.getElementById("red");
   arrow.style.webkitTransform = "rotate(" + (obj.x * 18) + "deg)"
   
     var x = obj.x * 1000;
