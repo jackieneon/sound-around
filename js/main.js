@@ -53,7 +53,7 @@ function onAccelerometer( obj ){
   //the style
 //set our arrow variable
 arrow = document.getElementById("red");
-  arrow.style.webkitTransform = "rotate(" + (obj.y * 18) + "deg)"
+  arrow.style.webkitTransform = "rotate(" + (obj.z * 18) + "deg)"
   
     var x = obj.x * 1000;
     x = Math.round(x);
