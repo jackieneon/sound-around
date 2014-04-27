@@ -1,6 +1,7 @@
 body {
 background-image:url("arrow+background.gif");
 background-repeat:no-repeat;
+position: absolute;
 }
 
 
