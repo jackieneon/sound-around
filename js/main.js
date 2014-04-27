@@ -48,8 +48,6 @@ function setupSpacebrew (){
 // o.alpha, o.beta, o.gamma for gyro
 function onAccelerometer( obj ){
 
-console.log(obj.x);
- 
   //put acel dat here to rotate arrow 
   // 1 -get the html element  
   // 2 - set 
