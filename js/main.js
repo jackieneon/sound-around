@@ -13,7 +13,7 @@ var arrow;
  * 				  It is called when the page loads.
  */
 function setupSpacebrew (){
-    var random_id = "0000" + Math.floor(Math.random() * 10000);
+    var random_id = "0000" + Math.floor(Math.random() * 1);
 
     app_name = app_name + ' ' + random_id.substring(random_id.length-4);
 
@@ -56,22 +56,22 @@ function onAccelerometer( obj ){
     arrow = document.getElementById("red");
     arrow.style.webkitTransform = "rotate(" + (obj.x * 18) + "deg)"
   
-    var x = obj.x * 1000;
+    var x = obj.x * 1;
     x = Math.round(x);
     
-    var y = obj.y * 1000;
+    var y = obj.y * 1;
     y = Math.round(y);
     
-    var z = obj.z * 1000;
+    var z = obj.z * 1;
     z = Math.round(z);
     
-    var alpha = obj.alpha * 1000;
+    var alpha = obj.alpha * 1;
     alpha = Math.round(alpha);
     
-    var beta = obj.beta * 1000;
+    var beta = obj.beta * 1;
     beta = Math.round(beta);
     
-    var gamma = obj.gamma * 1000;
+    var gamma = obj.gamma * 1;
     gamma = Math.round(gamma);
     
     sb.send("accelX", "range", x.toString() );
