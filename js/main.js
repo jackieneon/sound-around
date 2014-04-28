@@ -27,7 +27,9 @@ function setupSpacebrew (){
     sb.addPublish("accelX", "range", "500");
     sb.addPublish("accelY", "range", "500");
     sb.addPublish("accelZ", "range", "500");
-    
+    sb.addPublish("alpha", "range", "500");
+    sb.addPublish("beta", "range", "500");
+    sb.addPublish("gamma", "range", "500");
     //sb.addSubscribe("slider1", "range");
 
     // override Spacebrew events - this is how you catch events coming from Spacebrew
@@ -63,8 +65,21 @@ function onAccelerometer( obj ){
     var z = obj.z * 1000;
     z = Math.round(z);
     
+    var alpha = obj.alpha * 1000;
+    alpha = Math.round(alpha);
+    
+    var beta = obj.beta * 1000;
+    beta = Math.round(beta);
+    
+    var gamma = obj.gamma * 1000;
+    gamma = Math.round(gamma);
+    
     sb.send("accelX", "range", x.toString() );
     sb.send("accelY", "range", y.toString() );
     sb.send("accelZ", "range", z.toString() );
+    
+    sb.send("alpha", "range", alpha.toString() );
+    sb.send("beta", "range", beta.toString() );
+    sb.send("gamma", "range", gamma.toString() );
     
 }
