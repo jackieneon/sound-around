@@ -7,13 +7,14 @@ var sb
     , values = {};
 
 var arrow;
+var mapped = map( obj.x, -10, 10, 0, 1024);
 
 /**
  * setupSpacebrew Function that creates and configures the connection to the Spacebrew server.
  * 				  It is called when the page loads.
  */
 function setupSpacebrew (){
-    var random_id = "0000" + Math.floor(Math.random() * 1);
+    var random_id = "0000" + Math.floor(Math.random() * 10000);
 
     app_name = app_name + ' ' + random_id.substring(random_id.length-4);
 
@@ -54,7 +55,7 @@ function onAccelerometer( obj ){
   //the style
     //set our arrow variable
     arrow = document.getElementById("red");
-    arrow.style.webkitTransform = "rotate(" + (obj.x * 18) + "deg)"
+    arrow.style.webkitTransform = "rotate(" + (obj.x * 180) + "deg)"
   
     var x = obj.x * 1;
     x = Math.round(x);
@@ -74,7 +75,8 @@ function onAccelerometer( obj ){
     var gamma = obj.gamma * 1;
     gamma = Math.round(gamma);
     
-    sb.send("accelX", "range", x.toString() );
+//     sb.send("accelX", "range", x.toString() );
+    sb.send( "accelx", "range", mapped );
     sb.send("accelY", "range", y.toString() );
     sb.send("accelZ", "range", z.toString() );
     
