@@ -8,7 +8,6 @@ var sb
 
 var arrow;
 var mapped = map( obj.x, -10, 10, 0, 1024);
-sb.send( "accelX", "range", mapped );
 /**
  * setupSpacebrew Function that creates and configures the connection to the Spacebrew server.
  * 				  It is called when the page loads.
@@ -75,7 +74,10 @@ function onAccelerometer( obj ){
     var gamma = obj.gamma * 1;
     gamma = Math.round(gamma);
     
-    sb.send("accelX", "range", x.toString() );
+    
+    sb.send( "accelX", "range", mapped.toString() );
+
+//     sb.send("accelX", "range", x.toString() );
     sb.send("accelY", "range", y.toString() );
     sb.send("accelZ", "range", z.toString() );
     
